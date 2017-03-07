@@ -8,4 +8,6 @@ import com.mycompany.model.Book;
 public interface BookService {
 
 	public List<Book> findByTitle(String title);
+	
+	public Book save(Book book);
 }

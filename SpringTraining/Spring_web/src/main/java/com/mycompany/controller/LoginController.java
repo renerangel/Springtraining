@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.mycompany.model.Book;
 import com.mycompany.service.BookService;
 
+
 @Controller
 public class LoginController {
 
@@ -63,6 +64,7 @@ public class LoginController {
 		if(searchTitle != null) {
 			books = bookService.findByTitle(searchTitle);
 			LOGGER.info("Size books found: "+books.size());
+			model.addAttribute("books", books);
 		}
 		return INDEX_PAGE;
 	}
