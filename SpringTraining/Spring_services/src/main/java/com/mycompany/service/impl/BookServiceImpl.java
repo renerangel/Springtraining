@@ -20,5 +20,10 @@ public class BookServiceImpl implements BookService {
 		
 		return bookRepository.findByTitleLike(title);
 	}
+	
+	@Override
+	public Book save(Book book) {
+		return bookRepository.save(book);
+	}
 
 }

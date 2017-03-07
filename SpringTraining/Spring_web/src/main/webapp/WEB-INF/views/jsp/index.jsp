@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Gradle + Spring MVC</title>
+<title>Spring MVC4 + Java Config</title>
 
 <!-- Latest compiled and minified CSS -->
 <spring:url value="/static/css/app.css"                                             var="coreCss" />
@@ -79,7 +79,28 @@
 			</p>
 		</div>
 	</div>
-
+	<div class="row">
+		<div class="col-md-4">
+			<c:if test="${not empty books}">
+				<table  class="table">
+				<thead>
+					<tr>
+						<td>Isbn</td>
+						<td>Books</td>
+					</tr>
+				</thead>
+				<tbody>
+				<c:forEach var="book" items="${books}">
+					<tr>
+					<td>${book.isbn}</td>
+					<td>${book.title}</td>
+					</tr>
+				</c:forEach>
+				</tbody>
+				</table>
+			</c:if>
+		</div>
+	</div>
 	<hr>
 	<footer>
 		<p>&copy; <spring:message code="msg.loging.footer.company"/> 2016</p>
